@@ -147,6 +147,19 @@ lint/build checks on every change. A change MUST NOT merge with a
 failing check. Any exception is explicitly documented in the PR, not
 silently bypassed.
 
+### XVI. Feature-First Folder Structure
+Code is organized by feature, not by technical layer. Backend
+features live under `backend/features/<feature-name>/` containing
+that feature's router, service, and models together (e.g.
+`features/vm-provisioning/{router.py, service.py, models.py}`) rather
+than split across top-level `routers/`, `services/`, `models/`
+directories shared across every feature. Frontend features follow
+the same principle under `frontend/features/<feature-name>/`,
+containing that feature's components, hooks, and API client calls
+together. Code shared across multiple features lives in a clearly
+separate `shared/` or `common/` directory — it is not left ambiguous
+which category a given file belongs to.
+
 ## Repository & Workspace Structure
 Terraform configuration and the backend API live in separate
 repositories. HCP Terraform workspaces are separated by service
