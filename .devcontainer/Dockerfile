@@ -42,7 +42,8 @@ RUN existing_user=$(getent passwd $USER_UID | cut -d: -f1) \
         && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME; \
     fi \
     && echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
+    && chmod 0440 /etc/sudoers.d/$USERNAME \
+    && chown -R "$USERNAME:$USER_GID" /workspace/infrabase-client/node_modules
 
 USER $USERNAME
 WORKDIR /workspace

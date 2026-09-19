@@ -8,13 +8,15 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "workspaceFolder": "/workspace",
   "updateRemoteUserUID": true,
+  "runArgs": [
+    "--add-host=host.docker.internal:host-gateway"
+  ],
 
   // Commands: These run their respective scripts.
   "initializeCommand": "bash .devcontainer/scripts/initialize.sh",
   "onCreateCommand": "bash .devcontainer/scripts/on-create.sh",
   "updateContentCommand": "bash .devcontainer/scripts/update-content.sh",
   "postCreateCommand": "bash .devcontainer/scripts/post-create.sh",
-  "postStartCommand": "bash .devcontainer/scripts/post-start.sh",
   "postAttachCommand": "bash .devcontainer/scripts/post-attach.sh",
 
   // Preserve image-installed client packages outside the workspace bind mount.

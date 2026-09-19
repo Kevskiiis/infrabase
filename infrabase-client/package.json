@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "generate:api": "openapi-typescript http://localhost:8000/openapi.json -o src/shared/api/generated/openapi.ts",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,6 +17,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^9.4.0",
     "@mui/material": "^9.4.0",
+    "ky": "^2.1.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -33,6 +37,11 @@
     "globals": "^17.11.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.67.0",
+    "@playwright/test": "^1.55.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "jsdom": "^27.0.0",
+    "vitest": "^3.2.4",
     "vite": "^8.2.2"
   }
 }
