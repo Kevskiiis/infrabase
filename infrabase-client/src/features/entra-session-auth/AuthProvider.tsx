@@ -54,6 +54,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .catch((reason: unknown) => {
         if (!active) return
         const requestError = reason instanceof ApiRequestError ? reason : null
+        console.log(reason)
         dispatch({ type: 'failure', error: requestError?.code === 'AUTH_REQUIRED' ? null : requestError })
       })
       .finally(() => undefined)

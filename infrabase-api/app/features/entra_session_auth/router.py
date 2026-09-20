@@ -44,7 +44,9 @@ async def callback(request: Request, code: str | None = None, state: str | None 
         logger.warning("Entra callback rejected: error=%s description=%s", error, error_description or "none")
         raise AuthError("AUTH_REJECTED", "Sign-in was not completed. Try again.")
     session, return_to = await complete_callback(store, code, state)
-    response = RedirectResponse(safe_return_to(return_to), status_code=302)
+    return_path = safe_return_to(return_to)
+    frontend_url = f"{get_settings().frontend_origin.rstrip('/')}{return_path}"
+    response = RedirectResponse(frontend_url, status_code=302)
     response.set_cookie(value=session.session_id, **cookie_kwargs())
     return response
 

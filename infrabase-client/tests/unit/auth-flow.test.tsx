@@ -4,21 +4,12 @@ import { apiRequest, ApiRequestError } from '../../src/shared/api/client'
 import { startLogin } from '../../src/features/entra-session-auth/authApi'
 
 vi.mock('ky')
-
 describe('authentication flow primitives', () => {
   it('parses structured backend errors without exposing credentials', async () => {
-    const mockResponse = {
-      json: vi.fn().mockResolvedValue({ error: 'Authentication failed', code: 'AUTH_REJECTED', detail: 'Try again.' }),
-      status: 401,
-    }
-    const mockError = new Error('HTTP 401')
-    Object.assign(mockError, { response: mockResponse })
-    vi.mocked(ky).mockImplementation(() => {
-      throw mockError
-    })
+    vi.mocked(ky).mockResolvedValue(new Response(JSON.stringify({ error: 'Authentication failed', code: 'AUTH_REJECTED', detail: 'Try again.' }), { status: 401 }))
 
     await expect(apiRequest('/auth/session')).rejects.toMatchObject({ code: 'AUTH_REJECTED', status: 401 })
-    expect(vi.mocked(ky)).toHaveBeenCalledWith('/auth/session', expect.objectContaining({ credentials: 'include' }))
+    expect(vi.mocked(ky)).toHaveBeenCalledWith('/auth/session', expect.objectContaining({ credentials: 'include', throwHttpErrors: false }))
   })
 
   it('starts login with the current safe path', () => {
