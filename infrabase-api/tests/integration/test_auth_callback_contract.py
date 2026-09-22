@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 
-from app.features.entra_session_auth import router
-from app.features.entra_session_auth.dependencies import get_session_store
+from app.features.authentication import router
+from app.features.authentication.dependencies import get_session_store
 from app.core.session_store import SessionStore
 
 

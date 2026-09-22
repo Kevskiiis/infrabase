@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import get_settings
 from app.core.errors import AuthError, auth_exception_handler, validation_exception_handler
 from app.core.session_store import SessionStore, redis_lifespan
-from app.features.entra_session_auth.router import router as auth_router
+from app.features.authentication.router import router as auth_router
 
 # ---------------------------------------------------------------------------
 # App instance

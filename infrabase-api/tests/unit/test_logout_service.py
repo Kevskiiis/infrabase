@@ -1,8 +1,8 @@
 import pytest
 
 from app.core.session_store import SessionStore
-from app.features.entra_session_auth.service import logout
-from app.features.entra_session_auth.session import session_key
+from app.features.authentication.service import logout
+from app.features.authentication.session import session_key
 
 
 @pytest.mark.asyncio

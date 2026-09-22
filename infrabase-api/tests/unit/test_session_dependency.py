@@ -4,9 +4,9 @@ import pytest
 
 from app.core.errors import AuthError
 from app.core.session_store import SessionStore, SessionStoreUnavailable
-from app.features.entra_session_auth.dependencies import current_session
-from app.features.entra_session_auth.models import AuthenticatedUser, BrowserSession
-from app.features.entra_session_auth.session import session_key
+from app.features.authentication.dependencies import current_session
+from app.features.authentication.models import AuthenticatedUser, BrowserSession
+from app.features.authentication.session import session_key
 
 
 @pytest.mark.asyncio

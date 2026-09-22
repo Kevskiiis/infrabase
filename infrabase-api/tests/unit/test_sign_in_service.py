@@ -2,8 +2,8 @@ import pytest
 
 from app.core.errors import AuthError
 from app.core.session_store import SessionStore
-from app.features.entra_session_auth import service
-from app.features.entra_session_auth.models import AuthenticatedUser
+from app.features.authentication import service
+from app.features.authentication.models import AuthenticatedUser
 
 
 @pytest.mark.asyncio

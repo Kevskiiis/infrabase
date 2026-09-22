@@ -2,8 +2,8 @@ from fastapi import Depends, Request
 
 from app.core.errors import AuthError
 from app.core.session_store import SessionStore, SessionStoreUnavailable
-from app.features.entra_session_auth.models import BrowserSession
-from app.features.entra_session_auth.session import read_session
+from app.features.authentication.models import BrowserSession
+from app.features.authentication.session import read_session
 
 
 def get_session_store(request: Request) -> SessionStore:

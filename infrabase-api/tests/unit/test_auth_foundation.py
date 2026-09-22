@@ -4,9 +4,9 @@ import pytest
 
 from app.core.errors import AuthError, error_payload
 from app.core.session_store import SessionStore, SessionStoreUnavailable
-from app.features.entra_session_auth.models import AuthenticatedUser
-from app.features.entra_session_auth.redirects import safe_return_to
-from app.features.entra_session_auth.session import create_session, read_session
+from app.features.authentication.models import AuthenticatedUser
+from app.features.authentication.redirects import safe_return_to
+from app.features.authentication.session import create_session, read_session
 
 
 def test_safe_return_paths_reject_external_and_malformed_values() -> None:

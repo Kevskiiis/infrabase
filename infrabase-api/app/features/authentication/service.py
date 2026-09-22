@@ -3,9 +3,9 @@ import secrets
 from app.core.errors import AuthError
 from app.core.security import ProviderRejected, ProviderUnavailable, exchange_code, validate_identity
 from app.core.session_store import SessionStore, SessionStoreUnavailable
-from app.features.entra_session_auth.models import AuthenticatedUser, BrowserSession
-from app.features.entra_session_auth.redirects import safe_return_to
-from app.features.entra_session_auth.session import create_session, invalidate_session
+from app.features.authentication.models import AuthenticatedUser, BrowserSession
+from app.features.authentication.redirects import safe_return_to
+from app.features.authentication.session import create_session, invalidate_session
 
 
 def state_key(state: str) -> str:

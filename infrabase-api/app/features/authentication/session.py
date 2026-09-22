@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 
 from app.core.config import get_settings
 from app.core.session_store import SessionStore
-from app.features.entra_session_auth.models import AuthenticatedUser, BrowserSession
+from app.features.authentication.models import AuthenticatedUser, BrowserSession
 
 
 def session_key(session_id: str) -> str:

@@ -6,7 +6,7 @@ from authlib.integrations.httpx_client import AsyncOAuth2Client
 from authlib.jose import JsonWebKey, JsonWebToken
 
 from app.core.config import get_settings
-from app.features.entra_session_auth.models import AuthenticatedUser
+from app.features.authentication.models import AuthenticatedUser
 
 logger = logging.getLogger(__name__)
 

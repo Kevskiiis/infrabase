@@ -1,9 +1,9 @@
 from fastapi.testclient import TestClient
 
 from app.core.session_store import SessionStore
-from app.features.entra_session_auth.dependencies import get_session_store
-from app.features.entra_session_auth.models import AuthenticatedUser
-from app.features.entra_session_auth.session import create_session
+from app.features.authentication.dependencies import get_session_store
+from app.features.authentication.models import AuthenticatedUser
+from app.features.authentication.session import create_session
 
 
 def test_protected_request_requires_session(fake_redis) -> None:

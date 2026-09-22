@@ -8,10 +8,10 @@ from app.core.config import get_settings
 from app.core.errors import AuthError
 from app.core.security import ProviderUnavailable, authorization_url
 from app.core.session_store import SessionStore, SessionStoreUnavailable
-from app.features.entra_session_auth.dependencies import current_session, get_session_store
-from app.features.entra_session_auth.models import SessionStatus
-from app.features.entra_session_auth.redirects import safe_return_to
-from app.features.entra_session_auth.service import complete_callback, create_flow_state, logout
+from app.features.authentication.dependencies import current_session, get_session_store
+from app.features.authentication.models import SessionStatus
+from app.features.authentication.redirects import safe_return_to
+from app.features.authentication.service import complete_callback, create_flow_state, logout
 
 router = APIRouter(prefix="/auth", tags=["authentication"])
 logger = logging.getLogger(__name__)
