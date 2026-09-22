@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { logout } from '../../src/features/entra-session-auth/authApi'
+import { logout } from '../../src/features/authentication/authApi'
 
 describe('logout flow', () => {
   it('uses an idempotent backend logout request', async () => {

@@ -3,6 +3,9 @@
 .env.*
 !.env.example
 
+# Ignore Specs
+.specs/
+
 # Terraform Ignore
 .terraform/
 .terraform.lock.hcl

@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import ky from 'ky'
 import { apiRequest, ApiRequestError } from '../../src/shared/api/client'
-import { startLogin } from '../../src/features/entra-session-auth/authApi'
+import { startLogin } from '../../src/features/authentication/authApi'
 
 vi.mock('ky')
 describe('authentication flow primitives', () => {

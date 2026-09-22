@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import { AuthProvider } from './features/entra-session-auth/AuthProvider'
+import { AuthProvider } from './features/authentication/AuthProvider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -1,8 +1,8 @@
 import { AppBar, Box, Container, Stack, Toolbar, Typography } from '@mui/material'
 import './App.css'
-import { ProtectedRoute } from './features/entra-session-auth/ProtectedRoute'
-import { SignOutButton } from './features/entra-session-auth/SignOutButton'
-import { useAuth } from './features/entra-session-auth/AuthProvider'
+import { ProtectedRoute } from './features/authentication/ProtectedRoute'
+import { SignOutButton } from './features/authentication/SignOutButton'
+import { useAuth } from './features/authentication/AuthProvider'
 
 function Workspace() {
   const { user } = useAuth()

@@ -23,7 +23,7 @@ Packer images as the base.
 
 ## Stack
 - Backend: Python 3, FastAPI
-- Frontend: TypeScript + React, Material UI Component Library, Vite
+- Frontend: TypeScript + React, Material UI Component Library, Vite, Ky for API calls (MUST USE)
 - Authentication: Microsoft Entra ID (OIDC)
 - Infrastructure: HCP Terraform (Runs API), Proxmox provider, Packer
   base images

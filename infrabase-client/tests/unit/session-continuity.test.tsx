@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { getSession } from '../../src/features/entra-session-auth/authApi'
+import { getSession } from '../../src/features/authentication/authApi'
 
 describe('session continuity', () => {
   it('requests the backend session with browser credentials', async () => {

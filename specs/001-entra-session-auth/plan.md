@@ -81,7 +81,7 @@ infrabase-api/
 ├── app/
 │   ├── core/                  # config, logging, security, Redis session access
 │   └── features/
-│       └── entra_session_auth/ # router, service, models, dependencies
+│       └── authentication/ # router, service, models, dependencies
 └── tests/
   ├── unit/
   ├── integration/
@@ -89,14 +89,14 @@ infrabase-api/
 
 infrabase-client/
 ├── src/
-│   ├── features/entra-session-auth/ # auth state, protected boundary, error UI
+│   ├── features/authentication/ # auth state, protected boundary, error UI
 │   └── shared/                      # API client and generated contract types
 └── tests/
   ├── unit/
   └── e2e/
 ```
 
-**Structure Decision**: Keep backend authentication in a feature-first `app/features/entra_session_auth/` module, with shared Redis/config/security primitives under `app/core/`. Keep client auth state and protected-content behavior under `src/features/entra-session-auth/`, and consume the backend OpenAPI contract through generated client types under `src/shared/`. Add tests beside the existing two applications rather than creating a third project.
+**Structure Decision**: Keep backend authentication in a feature-first `app/features/authentication/` module, with shared Redis/config/security primitives under `app/core/`. Keep client auth state and protected-content behavior under `src/features/authentication/`, and consume the backend OpenAPI contract through generated client types under `src/shared/`. Add tests beside the existing two applications rather than creating a third project.
 
 ## Complexity Tracking
 

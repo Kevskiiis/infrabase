@@ -20,8 +20,8 @@ description: "Implementation tasks for Microsoft Entra ID session authentication
 - [X] T001 Obtain explicit approval for the maintained OIDC/JWT validation dependency and record the selected package/version in `infrabase-api/requirements.txt`
 - [X] T002 [P] Add backend test directories and shared pytest configuration in `infrabase-api/tests/conftest.py`
 - [X] T003 [P] Add frontend feature/test directories and test-runner configuration in `infrabase-client/package.json` and `infrabase-client/vite.config.ts`
-- [X] T004 [P] Create backend feature package files in `infrabase-api/app/features/entra_session_auth/__init__.py`, `router.py`, `service.py`, `models.py`, and `dependencies.py`
-- [X] T005 [P] Create frontend authentication feature files in `infrabase-client/src/features/entra-session-auth/AuthProvider.tsx`, `ProtectedRoute.tsx`, and `authApi.ts`
+- [X] T004 [P] Create backend feature package files in `infrabase-api/app/features/authentication/__init__.py`, `router.py`, `service.py`, `models.py`, and `dependencies.py`
+- [X] T005 [P] Create frontend authentication feature files in `infrabase-client/src/features/authentication/AuthProvider.tsx`, `ProtectedRoute.tsx`, and `authApi.ts`
 - [X] T006 [P] Create shared generated-client destination and API error types in `infrabase-client/src/shared/api/README.md`
 
 ## Phase 2: Foundational (Blocking Prerequisites)
@@ -31,11 +31,11 @@ description: "Implementation tasks for Microsoft Entra ID session authentication
 - [X] T007 Define environment-aware Entra, Redis, session, CORS, and frontend-origin settings in `infrabase-api/app/core/config.py`
 - [X] T008 Implement structured `{error, code, detail}` response models and exception handlers in `infrabase-api/app/core/errors.py`
 - [X] T009 Implement Redis client lifecycle and fail-closed session-store access helpers in `infrabase-api/app/core/session_store.py`
-- [X] T010 Implement safe internal return-destination validation plus short-lived, Redis-backed one-time OIDC flow state in `infrabase-api/app/features/entra_session_auth/redirects.py` and `infrabase-api/app/core/session_store.py`
-- [X] T011 Implement secure opaque session ID creation, 12-hour TTL handling, and cookie settings in `infrabase-api/app/features/entra_session_auth/session.py`
+- [X] T010 Implement safe internal return-destination validation plus short-lived, Redis-backed one-time OIDC flow state in `infrabase-api/app/features/authentication/redirects.py` and `infrabase-api/app/core/session_store.py`
+- [X] T011 Implement secure opaque session ID creation, 12-hour TTL handling, and cookie settings in `infrabase-api/app/features/authentication/session.py`
 - [X] T012 Implement Entra discovery, authorization-code exchange, JWKS retrieval, and claim validation boundary in `infrabase-api/app/core/security.py`
 - [X] T013 Register CORS, error handlers, authentication router, and protected-request dependency wiring in `infrabase-api/app/main.py`
-- [X] T014 [P] Define backend authentication and failure schemas matching `specs/001-entra-session-auth/contracts/auth-api.md` in `infrabase-api/app/features/entra_session_auth/models.py`
+- [X] T014 [P] Define backend authentication and failure schemas matching `specs/001-entra-session-auth/contracts/auth-api.md` in `infrabase-api/app/features/authentication/models.py`
 - [X] T015 [P] Generate the approved TypeScript API client from the backend OpenAPI schema and document the generation command in `infrabase-client/src/shared/api/README.md` and `infrabase-client/src/shared/api/generated/`
 - [X] T016 [P] Add unit tests for configuration, error redaction, safe redirects, cookie flags, and session-store failure behavior in `infrabase-api/tests/unit/test_auth_foundation.py`
 - [X] T017 [P] Add frontend API error parsing and connectivity-state primitives around the generated client in `infrabase-client/src/shared/api/client.ts`
@@ -57,11 +57,11 @@ description: "Implementation tasks for Microsoft Entra ID session authentication
 
 ### Implementation for User Story 1
 
-- [X] T022 [US1] Implement `/auth/login` return-destination validation and Entra authorization redirect in `infrabase-api/app/features/entra_session_auth/router.py`
-- [X] T023 [US1] Implement one-time callback-state consumption, code exchange, JWKS identity validation, and safe failure classification in `infrabase-api/app/features/entra_session_auth/service.py`
-- [X] T024 [US1] Implement successful callback session creation and secure cookie response in `infrabase-api/app/features/entra_session_auth/router.py`
-- [X] T025 [US1] Implement frontend sign-in redirect, callback/session bootstrap, and safe retryable error states in `infrabase-client/src/features/entra-session-auth/AuthProvider.tsx` and `authApi.ts`
-- [X] T026 [US1] Implement the protected-content boundary and unauthenticated fallback entry point in `infrabase-client/src/features/entra-session-auth/ProtectedRoute.tsx`
+- [X] T022 [US1] Implement `/auth/login` return-destination validation and Entra authorization redirect in `infrabase-api/app/features/authentication/router.py`
+- [X] T023 [US1] Implement one-time callback-state consumption, code exchange, JWKS identity validation, and safe failure classification in `infrabase-api/app/features/authentication/service.py`
+- [X] T024 [US1] Implement successful callback session creation and secure cookie response in `infrabase-api/app/features/authentication/router.py`
+- [X] T025 [US1] Implement frontend sign-in redirect, callback/session bootstrap, and safe retryable error states in `infrabase-client/src/features/authentication/AuthProvider.tsx` and `authApi.ts`
+- [X] T026 [US1] Implement the protected-content boundary and unauthenticated fallback entry point in `infrabase-client/src/features/authentication/ProtectedRoute.tsx`
 - [X] T027 [US1] Register the authentication flow and a protected demo route in `infrabase-client/src/App.tsx` and `infrabase-client/src/main.tsx`
 
 **Checkpoint**: User Story 1 is independently testable and delivers the MVP sign-in journey.
@@ -81,9 +81,9 @@ description: "Implementation tasks for Microsoft Entra ID session authentication
 
 ### Implementation for User Story 2
 
-- [X] T032 [US2] Implement authenticated-user and session validation dependencies with fail-closed Redis handling in `infrabase-api/app/features/entra_session_auth/dependencies.py`
-- [X] T033 [US2] Apply the session dependency to protected API routes and return structured unauthenticated/connectivity outcomes in `infrabase-api/app/main.py` and `infrabase-api/app/features/entra_session_auth/router.py`
-- [X] T034 [US2] Implement client session-status loading, protected-route loading state, expiration handling, and connectivity errors in `infrabase-client/src/features/entra-session-auth/AuthProvider.tsx` and `ProtectedRoute.tsx`
+- [X] T032 [US2] Implement authenticated-user and session validation dependencies with fail-closed Redis handling in `infrabase-api/app/features/authentication/dependencies.py`
+- [X] T033 [US2] Apply the session dependency to protected API routes and return structured unauthenticated/connectivity outcomes in `infrabase-api/app/main.py` and `infrabase-api/app/features/authentication/router.py`
+- [X] T034 [US2] Implement client session-status loading, protected-route loading state, expiration handling, and connectivity errors in `infrabase-client/src/features/authentication/AuthProvider.tsx` and `ProtectedRoute.tsx`
 - [X] T035 [US2] Add a protected application shell that consumes the authenticated user state in `infrabase-client/src/App.tsx`
 
 **Checkpoint**: User Stories 1 and 2 are independently testable; active sessions continue and unverifiable sessions never grant access.
@@ -103,10 +103,10 @@ description: "Implementation tasks for Microsoft Entra ID session authentication
 
 ### Implementation for User Story 3
 
-- [X] T040 [US3] Implement idempotent Redis session invalidation and cookie deletion in `infrabase-api/app/features/entra_session_auth/service.py` and `router.py`
-- [X] T041 [US3] Implement frontend logout action, safe failure state, and transition to the unauthenticated entry point in `infrabase-client/src/features/entra-session-auth/AuthProvider.tsx` and `authApi.ts`
-- [X] T042 [US3] Add an accessible sign-out control to the authenticated application shell in `infrabase-client/src/features/entra-session-auth/SignOutButton.tsx` and `infrabase-client/src/App.tsx`
-- [X] T043 [US3] Ensure every subsequent protected navigation performs backend session revalidation after logout, so same- and other-tab requests are denied within the 5-second requirement without relying on client-readable session credentials in `infrabase-client/src/features/entra-session-auth/ProtectedRoute.tsx`
+- [X] T040 [US3] Implement idempotent Redis session invalidation and cookie deletion in `infrabase-api/app/features/authentication/service.py` and `router.py`
+- [X] T041 [US3] Implement frontend logout action, safe failure state, and transition to the unauthenticated entry point in `infrabase-client/src/features/authentication/AuthProvider.tsx` and `authApi.ts`
+- [X] T042 [US3] Add an accessible sign-out control to the authenticated application shell in `infrabase-client/src/features/authentication/SignOutButton.tsx` and `infrabase-client/src/App.tsx`
+- [X] T043 [US3] Ensure every subsequent protected navigation performs backend session revalidation after logout, so same- and other-tab requests are denied within the 5-second requirement without relying on client-readable session credentials in `infrabase-client/src/features/authentication/ProtectedRoute.tsx`
 
 **Checkpoint**: All three user stories are independently testable and platform sign-out does not invoke global Entra logout.
 
@@ -118,9 +118,17 @@ description: "Implementation tasks for Microsoft Entra ID session authentication
 - [X] T045 [P] Add API contract coverage for every authentication error code and redaction rule in `infrabase-api/tests/contract/test_auth_openapi.py`
 - [X] T046 [P] Add frontend accessibility assertions for semantic controls, keyboard access, and recoverable failure messaging in `infrabase-client/tests/unit/auth-accessibility.test.tsx`
 - [X] T047 [P] Add CI jobs for backend unit/integration tests, frontend lint/build, and controlled E2E tests in `.github/workflows/auth-session.yml`
-- [X] T048 Review auth logs, error payloads, URL parameters, and page state for secret/token/session-ID exposure in `infrabase-api/app/core/logging.py` and `infrabase-client/src/features/entra-session-auth/`
+- [X] T048 Review auth logs, error payloads, URL parameters, and page state for secret/token/session-ID exposure in `infrabase-api/app/core/logging.py` and `infrabase-client/src/features/authentication/`
 - [X] T049 Update the authentication setup and validation instructions with approved dependency configuration in `infrabase-api/README.md` and `specs/001-entra-session-auth/quickstart.md`
 - [ ] T050 Run the complete feature validation scenarios from `specs/001-entra-session-auth/quickstart.md` and record any deviations in `specs/001-entra-session-auth/quickstart.md`
+
+## Phase 7: Convergence
+
+- [ ] T051 Route `/auth/callback` rejection, invalid-state, provider-unavailable, and session-store failure outcomes through the frontend safe error entry point while preserving no-session behavior per FR-017 (partial)
+- [ ] T052 Repair the frontend session-continuity and logout flows so the existing unit suite passes and connectivity, expiration, retry, and unauthenticated transitions remain explicit per US2/AC1, US2/AC3, and US3/AC1 (partial)
+- [ ] T053 Complete callback contract coverage for successful and failed `/auth/callback` responses, secure cookie headers, and no-session guarantees per FR-009, FR-014, FR-016, and FR-017 (missing)
+- [ ] T054 Fix the Playwright E2E configuration and controlled test doubles so the sign-in, continuity, and sign-out browser suites execute successfully per Constitution IV and XV (partial)
+- [ ] T055 Execute all validation scenarios in `specs/001-entra-session-auth/quickstart.md` and record the actual results and deviations per T050 (missing)
 
 ## Dependencies & Execution Order
 

@@ -32,7 +32,7 @@
     },
     "5173": {
       "label": "Vite",
-      "onAutoForward": "openBrowser"
+      // "onAutoForward": "openBrowser"
     }
   },
 
