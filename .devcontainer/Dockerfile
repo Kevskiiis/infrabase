@@ -20,13 +20,13 @@ RUN curl -fsSL "https://deb.nodesource.com/setup_${NODE_MAJOR}.x" | bash - \
 
 # Install application dependencies in the image. Python packages intentionally
 # live in the container interpreter; client packages are copied into a volume.
-COPY infrabase-api/requirements.txt /tmp/infrabase-api/requirements.txt
+COPY proxbase-api/requirements.txt /tmp/proxbase-api/requirements.txt
 RUN pip3 install --no-cache-dir --break-system-packages \
-    -r /tmp/infrabase-api/requirements.txt
+    -r /tmp/proxbase-api/requirements.txt
 
-COPY infrabase-client/package.json infrabase-client/package-lock.json \
-    /workspace/infrabase-client/
-RUN cd /workspace/infrabase-client && npm ci
+COPY proxbase-client/package.json proxbase-client/package-lock.json \
+    /workspace/proxbase-client/
+RUN cd /workspace/proxbase-client && npm ci
 
 # --- Non-root user, matching typical devcontainer convention ---
 ARG USERNAME=dev
@@ -43,7 +43,7 @@ RUN existing_user=$(getent passwd $USER_UID | cut -d: -f1) \
     fi \
     && echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
-    && chown -R "$USERNAME:$USER_GID" /workspace/infrabase-client/node_modules
+    && chown -R "$USERNAME:$USER_GID" /workspace/proxbase-client/node_modules
 
 USER $USERNAME
 WORKDIR /workspace

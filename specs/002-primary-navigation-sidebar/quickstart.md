@@ -4,7 +4,7 @@ This guide validates the authenticated sidebar using the existing Vite client, c
 
 ## Prerequisites
 
-- Node.js and dependencies installed in `infrabase-client/`
+- Node.js and dependencies installed in `proxbase-client/`
 - The repository's existing frontend test dependencies
 - A browser available to the Playwright configuration for E2E checks
 - The backend or a controlled `/auth/session` response that supplies an authenticated test user
@@ -14,7 +14,7 @@ This guide validates the authenticated sidebar using the existing Vite client, c
 From the repository root:
 
 ```bash
-cd infrabase-client
+cd proxbase-client
 npm run dev
 ```
 
@@ -25,7 +25,7 @@ The client should be available at `http://localhost:5173`.
 Run the focused unit tests:
 
 ```bash
-cd infrabase-client
+cd proxbase-client
 npm test -- --run tests/unit/navigation.test.tsx tests/unit/user-initials.test.ts
 ```
 
@@ -44,7 +44,7 @@ npm run test:e2e -- tests/e2e/navigation-sidebar.spec.ts
 
 ## Manual and E2E scenarios
 
-1. Start with a controlled authenticated user named `Test User`. Confirm every authenticated page shows the Infrabase brand, Services navigation, collapse control, and bottom-pinned user footer.
+1. Start with a controlled authenticated user named `Test User`. Confirm every authenticated page shows the Proxbase brand, Services navigation, collapse control, and bottom-pinned user footer.
 2. Select Services. Confirm the Services placeholder is non-blank, Services is marked active, and the sidebar remains present.
 3. Select Settings. Confirm the Settings placeholder is non-blank, Settings is marked active, and the sidebar remains present.
 4. Collapse the sidebar. Confirm labels hide, icons remain visible, and keyboard focus plus accessible names still expose Services, Settings, and the expand action.

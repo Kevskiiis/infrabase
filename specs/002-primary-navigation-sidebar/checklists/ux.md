@@ -78,7 +78,7 @@
 
 ## Ambiguities & Conflicts
 
-- [X] CHK045 - Does the specification define whether the Infrabase branding is decorative or an actionable route, and does that choice remain consistent with the navigation scope? [Ambiguity, Spec §FR-002, Out of Scope]
+- [X] CHK045 - Does the specification define whether the Proxbase branding is decorative or an actionable route, and does that choice remain consistent with the navigation scope? [Ambiguity, Spec §FR-002, Out of Scope]
 - [X] CHK046 - Does the specification resolve whether collapse state persists across route changes within the shell, given that it does not persist across browser sessions? [Ambiguity, Spec §User Story 2, Assumptions, Plan §Technical Context]
 - [X] CHK047 - Do the requirements define whether a narrow viewport uses a compact persistent panel, an overlay, or another directly accessible presentation without prescribing implementation prematurely? [Ambiguity, Spec §FR-017, SC-007, Assumptions]
 - [X] CHK048 - Are placeholder-page requirements consistent with the goal of a shared persistent sidebar and the requirement that Services and Settings remain authenticated? [Conflict, Spec §FR-004-FR-005, FR-014-FR-015, Contract §Placeholder Destinations]

@@ -77,7 +77,7 @@ specs/001-entra-session-auth/
 -->
 
 ```text
-infrabase-api/
+proxbase-api/
 ├── app/
 │   ├── core/                  # config, logging, security, Redis session access
 │   └── features/
@@ -87,7 +87,7 @@ infrabase-api/
   ├── integration/
   └── e2e/
 
-infrabase-client/
+proxbase-client/
 ├── src/
 │   ├── features/authentication/ # auth state, protected boundary, error UI
 │   └── shared/                      # API client and generated contract types

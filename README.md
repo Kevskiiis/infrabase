@@ -1,4 +1,4 @@
-# Infrabase
+# Proxbase
 
 A full-stack internal platform prototype focused on secure session-based authentication, modern navigation, and a clean administrative experience for cloud infrastructure workflows.
 
@@ -6,7 +6,7 @@ This project demonstrates a production-minded architecture with a FastAPI backen
 
 ## Overview
 
-Infrabase is designed as a secure, internal-facing application shell for infrastructure operations and user access management. The long-term goal is to provide a central interface for managing infrastructure workloads, secure access, and deployment automation across a self-hosted environment.
+Proxbase is designed as a secure, internal-facing application shell for infrastructure operations and user access management. The long-term goal is to provide a central interface for managing infrastructure workloads, secure access, and deployment automation across a self-hosted environment.
 
 The project emphasizes:
 
@@ -81,11 +81,11 @@ In practice, the application will serve as the operational front end for teams m
 ```text
 /
 ├── README.md
-├── infrabase-api/
+├── proxbase-api/
 │   ├── app/
 │   ├── tests/
 │   └── requirements.txt
-├── infrabase-client/
+├── proxbase-client/
 │   ├── src/
 │   ├── tests/
 │   ├── package.json
@@ -110,7 +110,7 @@ In practice, the application will serve as the operational front end for teams m
 From the repository root:
 
 ```bash
-cd infrabase-api
+cd proxbase-api
 python3 -m pip install -r requirements.txt
 ```
 
@@ -134,7 +134,7 @@ uvicorn app.main:app --reload
 From the repository root:
 
 ```bash
-cd infrabase-client
+cd proxbase-client
 npm install
 npm run dev
 ```
@@ -144,14 +144,14 @@ npm run dev
 Backend:
 
 ```bash
-cd infrabase-api
+cd proxbase-api
 pytest -q
 ```
 
 Frontend:
 
 ```bash
-cd infrabase-client
+cd proxbase-client
 npm run test
 ```
 

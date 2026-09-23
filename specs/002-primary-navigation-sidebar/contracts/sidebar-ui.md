@@ -12,7 +12,7 @@ This feature has no backend API contract. The following UI contract defines the 
 
 | Region | Expanded state | Collapsed state |
 |---|---|---|
-| Branding | Infrabase name/logo is visible and identifies the application. | A recognizable brand mark remains visible. |
+| Branding | Proxbase name/logo is visible and identifies the application. | A recognizable brand mark remains visible. |
 | Navigation | Services icon and text label are visible; current destination is marked. | Services icon remains visible with an accessible name and discoverable label. |
 | Collapse control | A control exposes an accessible action to collapse the panel. | A control exposes an accessible action to expand the panel. |
 | User footer | Circular initials avatar and Settings icon/text action are visible and pinned to the bottom. | Circular initials avatar and Settings icon remain visible; actions retain accessible names. |

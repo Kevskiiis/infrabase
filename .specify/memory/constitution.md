@@ -11,7 +11,7 @@ Sync Impact Report
 - Follow-up TODOs: none
 -->
 
-# Infrabase Constitution
+# Proxbase Constitution
 
 ## Purpose
 A self-service, "AWS at home" style platform for provisioning VMs on

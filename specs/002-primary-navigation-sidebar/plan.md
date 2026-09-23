@@ -63,7 +63,7 @@ specs/002-primary-navigation-sidebar/
 ### Source Code (repository root)
 
 ```text
-infrabase-client/
+proxbase-client/
 ├── src/
 │   ├── features/
 │   │   ├── navigation/

@@ -6,13 +6,13 @@
 
 **Status**: Draft
 
-**Input**: User description: "Build the primary navigation sidebar for Infrabase's frontend. This is spec 002, following the existing spec 001. The sidebar is a persistent, collapsible left-hand navigation panel present on all authenticated pages. From top to bottom it contains app branding, a Services navigation item, and a user footer with the current user's initials and a Settings action. Services and Settings may be minimal placeholder pages for now."
+**Input**: User description: "Build the primary navigation sidebar for Proxbase's frontend. This is spec 002, following the existing spec 001. The sidebar is a persistent, collapsible left-hand navigation panel present on all authenticated pages. From top to bottom it contains app branding, a Services navigation item, and a user footer with the current user's initials and a Settings action. Services and Settings may be minimal placeholder pages for now."
 
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Navigate Authenticated Workspace (Priority: P1)
 
-As an authenticated Infrabase user, I want a consistent sidebar on every authenticated page so that I can identify the application and move between available workspace areas.
+As an authenticated Proxbase user, I want a consistent sidebar on every authenticated page so that I can identify the application and move between available workspace areas.
 
 **Why this priority**: Reliable primary navigation is the foundation for every authenticated workflow that follows.
 
@@ -20,7 +20,7 @@ As an authenticated Infrabase user, I want a consistent sidebar on every authent
 
 **Acceptance Scenarios**:
 
-1. **Given** an authenticated user opens any authenticated page, **When** the page finishes loading, **Then** the left-hand sidebar is visible with Infrabase branding, a Services navigation item, and the user footer.
+1. **Given** an authenticated user opens any authenticated page, **When** the page finishes loading, **Then** the left-hand sidebar is visible with Proxbase branding, a Services navigation item, and the user footer.
 2. **Given** an authenticated user selects Services, **When** navigation completes, **Then** the user reaches the Services page and the Services item is visibly marked as the current destination.
 3. **Given** an unauthenticated user requests an authenticated page, **When** the authentication guard handles the request, **Then** the user is sent through the existing sign-in flow and does not see the sidebar before authentication succeeds.
 
@@ -28,7 +28,7 @@ As an authenticated Infrabase user, I want a consistent sidebar on every authent
 
 ### User Story 2 - Collapse Navigation for More Workspace (Priority: P1)
 
-As an authenticated Infrabase user, I want to collapse and expand the sidebar so that I can choose between navigation context and more room for the page I am using.
+As an authenticated Proxbase user, I want to collapse and expand the sidebar so that I can choose between navigation context and more room for the page I am using.
 
 **Why this priority**: The sidebar must support both discoverable navigation and efficient use of limited screen space.
 
@@ -44,7 +44,7 @@ As an authenticated Infrabase user, I want to collapse and expand the sidebar so
 
 ### User Story 3 - Identify Account and Open Settings (Priority: P2)
 
-As an authenticated Infrabase user, I want to see which account is active and open Settings from the sidebar so that account-related controls have a predictable home.
+As an authenticated Proxbase user, I want to see which account is active and open Settings from the sidebar so that account-related controls have a predictable home.
 
 **Why this priority**: Users need confidence about the active identity and a stable location for future preferences and account controls.
 
@@ -73,7 +73,7 @@ As an authenticated Infrabase user, I want to see which account is active and op
 ### Functional Requirements
 
 - **FR-001**: The platform MUST display a persistent left-hand sidebar on every authenticated page.
-- **FR-002**: The sidebar MUST display the Infrabase application name or logo at its top.
+- **FR-002**: The sidebar MUST display the Proxbase application name or logo at its top.
 - **FR-003**: The sidebar MUST provide a Services navigation item with an icon and text label when expanded.
 - **FR-004**: Selecting Services MUST navigate the user to a Services page without requiring re-authentication while the existing session is valid. Services is a protected page.
 - **FR-005**: The Services page MUST provide a clear minimal placeholder state until Services functionality is separately specified.

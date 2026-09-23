@@ -2,8 +2,8 @@
 
 PYTHON ?= python3
 NPM ?= npm
-API_DIR := infrabase-api
-CLIENT_DIR := infrabase-client
+API_DIR := proxbase-api
+CLIENT_DIR := proxbase-client
 API_HOST ?= 0.0.0.0
 API_PORT ?= 8000
 CLIENT_HOST ?= 0.0.0.0

@@ -19,8 +19,8 @@ fi
 
 # Create a local .env from the template if one doesn't exist yet, so the
 # container never starts with missing config on a fresh clone.
-ENV_TEMPLATE="$(dirname "${BASH_SOURCE[0]}")/../../infrabase-api/.env.example"
-ENV_FILE="$(dirname "${BASH_SOURCE[0]}")/../../infrabase-api/.env"
+ENV_TEMPLATE="$(dirname "${BASH_SOURCE[0]}")/../../proxbase-api/.env.example"
+ENV_FILE="$(dirname "${BASH_SOURCE[0]}")/../../proxbase-api/.env"
 if [ -f "$ENV_TEMPLATE" ] && [ ! -f "$ENV_FILE" ]; then
     cp "$ENV_TEMPLATE" "$ENV_FILE"
     echo "[initialize] Created .env from .env.example — fill in real values."

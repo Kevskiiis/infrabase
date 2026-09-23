@@ -4,8 +4,8 @@ This guide validates the feature through the backend API and browser client. Use
 
 ## Prerequisites
 
-- Python 3 and the dependencies in `infrabase-api/requirements.txt`
-- Node.js and the dependencies in `infrabase-client/package.json`
+- Python 3 and the dependencies in `proxbase-api/requirements.txt`
+- Node.js and the dependencies in `proxbase-client/package.json`
 - A reachable test Redis instance
 - Test OIDC configuration: tenant, client ID, redirect URI, and secret supplied through environment-aware configuration
 - A browser automation runner for E2E checks
@@ -15,14 +15,14 @@ This guide validates the feature through the backend API and browser client. Use
 From the repository root:
 
 ```bash
-cd infrabase-api
+cd proxbase-api
 uvicorn app.main:app --reload
 ```
 
 In a second terminal:
 
 ```bash
-cd infrabase-client
+cd proxbase-client
 npm run dev
 ```
 

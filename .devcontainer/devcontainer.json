@@ -21,7 +21,7 @@
 
   // Preserve image-installed client packages outside the workspace bind mount.
   "mounts": [
-    "source=infrabase-client-node-modules,target=/workspace/infrabase-client/node_modules,type=volume"
+    "source=proxbase-client-node-modules,target=/workspace/proxbase-client/node_modules,type=volume"
   ],
 
   "forwardPorts": [8000, 5173],
