@@ -6,13 +6,18 @@ This project demonstrates a production-minded architecture with a FastAPI backen
 
 ## Overview
 
-Infrabase is designed as a secure, internal-facing application shell for infrastructure operations and user access management. The project emphasizes:
+Infrabase is designed as a secure, internal-facing application shell for infrastructure operations and user access management. The long-term goal is to provide a central interface for managing infrastructure workloads, secure access, and deployment automation across a self-hosted environment.
+
+The project emphasizes:
 
 - secure authentication and session handling
 - single-page frontend experience with protected routes
 - clean, modern navigation patterns
 - modular backend feature organization
 - test-driven validation for auth and session behaviors
+- future deployment workflows for infrastructure automation on Proxmox hosts
+
+The core vision is to support a deployment model where infrastructure resources are provisioned and managed through automated templates, with Proxmox serving as the hypervisor platform and Packer templates enabling repeatable VM image creation.
 
 ## Architecture
 
@@ -63,6 +68,13 @@ The client layer includes:
 - centralized configuration and environment-based deployment setup
 - structured test suite covering authentication contracts and service logic
 - clean, component-driven frontend architecture
+- planned infrastructure deployment workflows using Proxmox and Packer templates
+
+## Intended Use Case
+
+This project is intended to evolve into an internal platform for provisioning and managing infrastructure in a self-hosted environment. The target model is a Proxmox-based infrastructure layer where automated image and VM workflows are driven by Packer templates, allowing reproducible deployment of standardized environments.
+
+In practice, the application will serve as the operational front end for teams managing infrastructure tasks, access control, and deployment activity in a consistent and repeatable way.
 
 ## Repository Structure
 
@@ -145,7 +157,7 @@ npm run test
 
 ## Project Status
 
-This project is an active prototype and design-driven implementation of secure internal application workflows. It is structured to demonstrate practical engineering decisions relevant to enterprise software development, including authentication, routing, session management, and a maintainable frontend/backend split.
+This project is still a work in progress and is being actively developed. It is intended to demonstrate practical engineering decisions relevant to enterprise software development, including authentication, routing, session management, and a maintainable frontend/backend split. It is not yet a production-grade deployment and continues to evolve as features and validation mature.
 
 ## Professional Summary
 
